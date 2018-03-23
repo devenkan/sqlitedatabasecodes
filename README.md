@@ -1,0 +1,2 @@
+# sqlitedatabasecodes
+cheatsheet for sqlite 
