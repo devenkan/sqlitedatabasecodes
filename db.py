@@ -1,12 +1,24 @@
 '''
-In our definition of the connection, you see we're connecting to a database, called 'tutorial.db.' This didn't exist prior in my case, but, when we run the code, if the database doesn't exist, it will be created. If it does exist, it will not be overwritten or re-created. Next, we defined the cursor. Think of the cursor like your mouse cursor, it simply does things, like select things, delete things, add things, and so on. Now, most people think of a database, and think of rows and columns of data. That's actually a table. Tables go in databases, and data goes in the tables. A database may only contain a single table, or it may contain a thousand tables. Let's make a table:
-
-Here, the cursor executes an SQL query. This one is an INSERT INTO, and the table name follows. Then, we insert a tuple of values. After inserting we use conn.commit(). Think of conn.commit() much like saving the document. Recall how SQLite works. You have a file part before actually committing. You do not need to commit after every INSERT. Instead, you commit when you are done with that specific insertion task. You then close the cursor, and connection when you are totally done. If you may be doing more inserts in a moment, then there's no reason to close the connection. If instead you are using SQLite on a registration page, for example, once the user has registered, you wouldn't want to leave that connection open wasting memory, you'd want to close it off.
-
-Finally, in the code above, we run the functions, creating the table and entering a row. All set. How do we know it's done? We could run another SQL query to request some data, but you may want to visually see your table from time to time. This can be done in a variety of ways, but I prefer and recommend: SQLite Browser
-
-
-Notice that when we execute the query, we're executing it with the cursor as usual. Then, to access the data from the cursor, we use c.fetchall(). Think of this again, much like the computer cursor. The select is like you highlighted, then you do c.fetchall(), so this is like you are copying your highlighted information. Finally, we can either just print the data, or iterate through it, like pasting the information. Also, note that we are not needing to do a conn.commit(). There's nothing to save.
+In our definition of the connection, you see we're connecting to a database, called 'tutorial.db.'
+This didn't exist prior in my case, but, when we run the code, if the database doesn't exist, it will be created. 
+If it does exist, it will not be overwritten or re-created. Next, we defined the cursor. 
+Think of the cursor like your mouse cursor, it simply does things, like select things, delete things, add things, and so on.
+Now, most people think of a database, and think of rows and columns of data. That's actually a table.
+Tables go in databases, and data goes in the tables.
+A database may only contain a single table, or it may contain a thousand tables. Let's make a table:
+Here, the cursor executes an SQL query. This one is an INSERT INTO, and the table name follows.
+Then, we insert a tuple of values. After inserting we use conn.commit(). Think of conn.commit() much like saving the document. 
+Recall how SQLite works. You have a file part before actually committing. You do not need to commit after every INSERT. 
+Instead, you commit when you are done with that specific insertion task. You then close the cursor, and connection when you are totally
+done. If you may be doing more inserts in a moment, then there's no reason to close the connection. If instead you are using SQLite on a registration page, 
+for example, once the user has registered, you wouldn't want to leave that connection open wasting memory, you'd want to close it off.
+Finally, in the code above, we run the functions, creating the table and entering a row. All set. How do we know it's done? We could run
+another SQL query to request some data, but you may want to visually see your table from time to time. This can be done in a variety of
+ways, but I prefer and recommend: SQLite Browser Notice that when we execute the query, we're executing it with the cursor as usual.
+Then, to access the data from the cursor, we use c.fetchall(). Think of this again, much like the computer cursor. 
+The select is like you highlighted, then you do c.fetchall(), so this is like you are copying your highlighted information.
+Finally, we can either just print the data, or iterate through it, like pasting the information.
+Also, note that we are not needing to do a conn.commit(). There's nothing to save.
 '''
 
 
