@@ -10,9 +10,10 @@ Here, the cursor executes an SQL query. This one is an INSERT INTO, and the tabl
 Then, we insert a tuple of values. After inserting we use conn.commit(). Think of conn.commit() much like saving the document. 
 Recall how SQLite works. You have a file part before actually committing. You do not need to commit after every INSERT. 
 Instead, you commit when you are done with that specific insertion task. You then close the cursor, and connection when you are totally
-done. If you may be doing more inserts in a moment, then there's no reason to close the connection. If instead you are using SQLite on a registration page, 
-for example, once the user has registered, you wouldn't want to leave that connection open wasting memory, you'd want to close it off.
-Finally, in the code above, we run the functions, creating the table and entering a row. All set. How do we know it's done? We could run
+done. If you may be doing more inserts in a moment, then there's no reason to close the connection. If instead you are using SQLite on
+a registration page, for example, once the user has registered, you wouldn't want to leave that connection open wasting memory,
+you'd want to close it off. Finally, in the code above, we run the functions, creating the table and entering a row. All set.
+How do we know it's done? We could run
 another SQL query to request some data, but you may want to visually see your table from time to time. This can be done in a variety of
 ways, but I prefer and recommend: SQLite Browser Notice that when we execute the query, we're executing it with the cursor as usual.
 Then, to access the data from the cursor, we use c.fetchall(). Think of this again, much like the computer cursor. 
